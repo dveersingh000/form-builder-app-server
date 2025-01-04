@@ -16,7 +16,13 @@ const app = express();
 const PORT = 3000;
 
 // Enable CORS
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://form-builder-4unbp767c-dharamveer-singhs-projects.vercel.app/", 
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 app.use(express.json()); // For JSON payloads
 app.use(express.urlencoded({ extended: true }));
